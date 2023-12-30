@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Formulaire</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f7f7f7;
+      color: #080808;
+    }
+
+    .container {
+        box-shadow:1px 2px 2px 1px #333;
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #eeeeee;
+      border-radius: 5px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      font-weight: bold;
+      color: #333;
+    }
+
+    .checkbox-label {
+      font-weight: normal;
+      color: #1880d5;
+    }
+
+    .politique-confidentialite {
+      color: #333;
+    }
+
+    .btn-primary {
+      background-color: #007bff;
+      border-color: #007bff;
+    }
+
+    .btn-primary:hover {
+      background-color: #0069d9;
+      border-color: #0062cc;
+    }
+    
+    header {
+        background-color: #0062cc;
+        margin-bottom: 10px;
+    }
+    
+    .h img {
+        border-radius: 100px;
+        padding: 20px;
+        width: 400px;
+        height: 300px;
+        align-items: center;
+        display: flex;
+        margin: auto;
+        margin-bottom: 20px;
+        padding-bottom: 50px;
+    }
+    
+    .h h1 {
+        padding: 5px;
+        color: white;
+    }
+    
+    .h span {
+        color: red;
+    }
+    footer{
+        margin-top: 20px;
+        padding: 20px;
+        background-color: #007bff;
+    }
+    p{
+        text-align: center;
+        padding: 20px;
+          
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="h">
+      <h1>UFUNDI / <span>Bora</span></h1>
+      <img src="bk.jpg" alt="logo" height="200" width="200">
+    </div>
+  </header>
+  <div>
+    <p>UFUNDI/Bora, votre partenaire de confiance en matière de surveillance automobile !
+Nous sommes spécialisés dans la protection et la sécurité de votre flotte de véhicules. Notre équipe dévouée met son expertise au service de votre tranquillité d'esprit, en fournissant des solutions de surveillance avancées et fiables.
+Que vous ayez besoin de suivre en temps réel la localisation de vos véhicules, de gérer la consommation de carburant, ou de bénéficier d'un système d'alerte en cas d'intrusion, UFUNDI/Bora est là pour vous offrir des solutions sur mesure.
+Rejoignez-nous dès aujourd'hui et découvrez comment nous pouvons vous aider à assurer la sécurité et l'efficacité de votre flotte automobile.
+Avec UFUNDI/Bora, votre tranquillité d'esprit est notre priorité absolue.</p>
+  <div class="container">
+    <h1>Formulaire</h1>
+    <form action="https://api.whatsapp.com/send" method="GET">
+      <div class="form-group">
+        <label for="prenom">Prénom</label>
+        <input type="text" class="form-control" placeholder="Saisir ton prénom" id="prenom" name="prenom" required>
+      </div>
+      <div class="form-group">
+        <label for="nom">Nom</label>
+        <input type="text" class="form-control" id="nom" placeholder="Saisir ton nom" name="nom" required>
+      </div>
+      <div class="form-group">
+        <label for="entreprise">Entreprise</label>
+        <input type="text" class="form-control" id="entreprise" placeholder="Saisir le nom de ton entreprise" name="entreprise" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" placeholder="Saisir ton email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="telephone">Téléphone</label>
+        <input type="tel" class="form-control" id="telephone" placeholder="Saisir ton numéro de téléphone" name="telephone" required>
+      </div>
+      <div class="form-group">
+        <label for="pays">Pays</label>
+        <input type="text" class="form-control" id="pays" placeholder="Saisir le nom de ton pays" name="pays" required>
+      </div>
+      <div class="form-group">
+        <label for="ville">Ville</label>
+        <input type="text" class="form-control" id="ville" placeholder="Saisir le nom de ta ville" name="ville" required>
+      </div>
+      <div class="form-group">
+        <label for="nombre_vehicules">Nombre de véhicules</label>
+        <input type="number" class="form-control" id="nombre_vehicules" placeholder="Saisir le nombre de véhicules" name="nombre_vehicules" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Suivant</button>
+    </form>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var form = document.querySelector('form');
+      form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Empêche l'envoi du formulaire
+  
+        // Récupère les valeurs des champs du formulaire
+        var prenom = document.getElementById('prenom').value;
+        var nom = document.getElementById('nom').value;
+        var entreprise = document.getElementById('entreprise').value;
+        var email = document.getElementById('email').value;
+        var telephone = document.getElementById('telephone').value;
+        var pays = document.getElementById('pays').value;
+        var ville = document.getElementById('ville').value;
+        var nombreVehicules = document.getElementById('nombre_vehicules').value;
+  
+        // Numéro de téléphone du destinataire
+        var numeroDestinataire = '+243977814044';
+  
+        // Génère le lien de partage WhatsApp avec les paramètres appropriés
+        var whatsappLink = 'https://api.whatsapp.com/send?phone=' + encodeURIComponent(numeroDestinataire) + '&text=Bonjour,%20je%20suis%20intéressé%20par%20vos%20services.%20Voici%20mes%20informations%20:%0A%0A';
+        whatsappLink += 'Prénom : ' + encodeURIComponent(prenom) + '%0A';
+        whatsappLink += 'Nom : ' + encodeURIComponent(nom) + '%0A';
+        whatsappLink += 'Entreprise : ' + encodeURIComponent(entreprise) + '%0A';
+        whatsappLink += 'Email : ' + encodeURIComponent(email) + '%0A';
+        whatsappLink += 'Téléphone : ' + encodeURIComponent(telephone) + '%0A';
+        whatsappLink += 'Pays : ' + encodeURIComponent(pays) + '%0A';
+        whatsappLink += 'Ville : ' + encodeURIComponent(ville) + '%0A';
+        whatsappLink += 'Nombre de véhicules : ' + encodeURIComponent(nombreVehicules);
+  
+        // Ouvre le lien de partage WhatsApp dans une nouvelle fenêtre
+        window.open(whatsappLink);
+  
+        // Réinitialise les champs du formulaire
+        form.reset();
+      });
+    });
+  </script>
+  <footer>
+    <strong> 2024 UFUNDI/Bora</strong><br>
+    <p> Adresse :V.kinshasa C.bandalungwa Q.makelele AV.milambo N°20 <br>
+    Téléphone : +243 977 814 044 <br> Email: ufundibora@gmail.com </p>
+  </footer>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
