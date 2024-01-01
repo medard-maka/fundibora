@@ -1,9 +1,8 @@
-
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Service de suivis en temps reel du carburant via un smart phone</title>
+  <title>Formulaire de demande de suivis du carburant en temps reel</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <style>
      body {
@@ -169,90 +168,89 @@
        et la productivité de votre entreprise c'est pourquoi un suivi de consomation du carburant
         reste priorité absolue <br><strong><em>completez le formulaire pour obtenir votre devis .</em></strong>
        </p>
-        
   <div class="container">
-    <h1>Formulaire</h1>
-    <form action="https://api.whatsapp.com/send" method="GET">
+    <h1>Formulaire de demande de suivi du carburant en temps réel</h1>
+    <form>
       <div class="form-group">
-        <label for="prenom">Prénom</label>
-        <input type="text" class="form-control" placeholder="Saisir ton prénom" id="prenom" name="prenom" required>
+        <label for="prenom">Prénom:</label>
+        <input type="text" class="form-control" id="prenom" placeholder="Entrez votre prénom">
       </div>
       <div class="form-group">
-        <label for="nom">Nom</label>
-        <input type="text" class="form-control" id="nom" placeholder="Saisir ton nom" name="nom" required>
+        <label for="nom">Nom:</label>
+        <input type="text" class="form-control" id="nom" placeholder="Entrez votre nom">
       </div>
       <div class="form-group">
-        <label for="entreprise">Entreprise</label><br>
-         <input type="radio" name="nom" id="societé" value="societé"><label for="">societé</label><br>
-         <input type="radio" name="nom" id="personnel" value="personnel"><label for="">personnel</label>
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" id="email" placeholder="Entrez votre email">
       </div>
       <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" class="form-control" id="email" placeholder="Saisir ton email" name="email" required>
+        <label for="telephone">Téléphone:</label>
+        <input type="tel" class="form-control" id="telephone" placeholder="Entrez votre numéro de téléphone">
       </div>
       <div class="form-group">
-        <label for="telephone">Téléphone</label>
-        <input type="tel" class="form-control" id="telephone" placeholder="Saisir ton numéro de téléphone" name="telephone" required>
+        <label for="pays">Pays:</label>
+        <input type="text" class="form-control" id="pays" placeholder="Entrez votre pays">
       </div>
       <div class="form-group">
-        <label for="pays">Pays</label>
-        <input type="text" class="form-control" id="pays" placeholder="Saisir le nom de ton pays" name="pays" required>
+        <label for="ville">Ville:</label>
+        <input type="text" class="form-control" id="ville" placeholder="Entrez votre ville">
       </div>
       <div class="form-group">
-        <label for="ville">Ville</label>
-        <input type="text" class="form-control" id="ville" placeholder="Saisir le nom de ta ville" name="ville" required>
+        <label for="entreprise">Entreprise:</label>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="entreprise" id="entreprise1" value="Entreprise 1">
+          <label class="form-check-label" for="entreprise1">Entreprise 1</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="entreprise" id="entreprise2" value="Entreprise 2">
+          <label class="form-check-label" for="entreprise2">Entreprise 2</label>
+        </div>
       </div>
       <div class="form-group">
-        <label for="nombre_vehicules">Nombre de véhicules</label>
-        <input type="number" class="form-control" id="nombre_vehicules" placeholder="Saisir le nombre de véhicules" name="nombre_vehicules" required>
+        <label for="nombre_vehicules">Nombre de véhicules:</label>
+        <input type="number" class="form-control" id="nombre_vehicules" placeholder="Entrez le nombre de véhicules">
       </div>
-      <button type="submit" class="bb">envoyer ce formulaire</button><br> <br>
+      <div class="form-group">
+        <label for="message">Message:</label>
+        <textarea class="form-control" id="message" placeholder="Entrez votre message"></textarea>
+      </div>
+      <button type="button" class="bb" onclick="envoyerWhatsApp()">Envoyer ce formulaire</button><br><br>
       <a href="devis.html">suivant</a>
     </form>
   </div>
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    var form = document.querySelector('form');
-    form.addEventListener('submit', function(event) {
-      event.preventDefault(); // Empêche l'envoi du formulaire
-
-      // Récupère les valeurs des champs du formulaire
-      var prenom = document.getElementById('prenom').value;
-      var nom = document.getElementById('nom').value;
-      var entreprise = document.getElementById('entreprise').value;
-      var email = document.getElementById('email').value;
-      var telephone = document.getElementById('telephone').value;
-      var pays = document.getElementById('pays').value;
-      var ville = document.getElementById('ville').value;
-      var nombreVehicules = document.getElementById('nombre_vehicules').value;
-
-      // Numéro de téléphone du destinataire
-      var numeroDestinataire = '+243810076009';
-
-      // Génère le lien de partage WhatsApp avec les paramètres appropriés
-      var whatsappLink = 'https://api.whatsapp.com/send?phone=' + encodeURIComponent(numeroDestinataire) + '&text=Bonjour,%20je%20suis%20intéressé%20par%20vos%20services.%20Voici%20mes%20informations%20:%0A%0A';
-      whatsappLink += 'Prénom : ' + encodeURIComponent(prenom) + '%0A';
-      whatsappLink += 'Nom : ' + encodeURIComponent(nom) + '%0A';
-      whatsappLink += 'Entreprise : ' + encodeURIComponent(entreprise) + '%0A';
-      whatsappLink += 'Email : ' + encodeURIComponent(email) + '%0A';
-      whatsappLink += 'Téléphone : ' + encodeURIComponent(telephone) + '%0A';
-      whatsappLink += 'Pays : ' + encodeURIComponent(pays) + '%0A';
-      whatsappLink += 'Ville : ' + encodeURIComponent(ville) + '%0A';
-      whatsappLink += 'Nombre de véhicules : ' + encodeURIComponent(nombreVehicules);
-
-      // Ouvre le lien de partage WhatsApp dans une nouvelle fenêtre
-      window.open(whatsappLink);
-
-      // Réinitialise les champs du formulaire
-      form.reset();
-    });
-  });
-</script>
   <footer>
     <strong> 2024 FUNDI/Bora</strong><br>
     <p> Adresse :V.kinshasa C.bandalungwa Q.makelele AV.milambo N°20 <br>
     Téléphone : +243 810 076 009 <br> Email: fundibora@gmail.com </p>
   </footer>
+  <script>
+    function envoyerWhatsApp() {
+      var prenom = document.getElementById("prenom").value;
+      var nom = document.getElementById("nom").value;
+      var email = document.getElementById("email").value;
+      var telephone = document.getElementById("telephone").value;
+      var pays = document.getElementById("pays").value;
+      var ville = document.getElementById("ville").value;
+      var entreprise = document.querySelector('input[name="entreprise"]:checked').value;
+      var nbVehicules = document.getElementById("nombre_vehicules").value;
+      var message = document.getElementById("message").value;
+
+      var texteWhatsApp = "Prénom : " + prenom + "%0A"+"\n" +
+                          "Nom : " + nom + "%0A" +"\n" +
+                          "Email : " + email + "%0A" +"\n" +
+                          "Téléphone : " + telephone + "%0A" +"\n" +
+                          "Pays : " + pays + "%0A" +"\n" +
+                          "Ville : " + ville + "%0A" +"\n" +
+                          "Entreprise : " + entreprise + "%0A" +"\n" +
+                          "Nombre de véhicules : " + nbVehicules + "%0A" +"\n" +
+                          "Message : " + message;
+
+      var numeroDestinataire = "+243810076009";
+      var urlWhatsApp = "https://wa.me/" + numeroDestinataire +"?text=" + encodeURIComponent(texteWhatsApp);
+
+      window.open(urlWhatsApp);
+    }
+  </script>
 
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
