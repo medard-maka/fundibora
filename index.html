@@ -199,11 +199,11 @@
         <label for="entreprise">Entreprise:</label>
         <div class="form-check">
           <input class="form-check-input" type="radio" name="entreprise" id="entreprise1" value="Entreprise 1">
-          <label class="form-check-label" for="entreprise1">Entreprise 1</label>
+          <label class="form-check-label" for="entreprise1">Entreprise</label>
         </div>
         <div class="form-check">
           <input class="form-check-input" type="radio" name="entreprise" id="entreprise2" value="Entreprise 2">
-          <label class="form-check-label" for="entreprise2">Entreprise 2</label>
+          <label class="form-check-label" for="entreprise2">indivudus</label>
         </div>
       </div>
       <div class="form-group">
@@ -235,15 +235,15 @@
       var nbVehicules = document.getElementById("nombre_vehicules").value;
       var message = document.getElementById("message").value;
 
-      var texteWhatsApp = "Prénom : " + prenom + "%0A"+"\n" +
-                          "Nom : " + nom + "%0A" +"\n" +
-                          "Email : " + email + "%0A" +"\n" +
-                          "Téléphone : " + telephone + "%0A" +"\n" +
-                          "Pays : " + pays + "%0A" +"\n" +
-                          "Ville : " + ville + "%0A" +"\n" +
-                          "Entreprise : " + entreprise + "%0A" +"\n" +
-                          "Nombre de véhicules : " + nbVehicules + "%0A" +"\n" +
-                          "Message : " + message;
+      var texteWhatsApp = "Prénom : " +"*"+prenom+"*" +"\n" +
+                          "Nom : " +"*"+nom+"*" + "\n" +
+                          "Email : " +"*"+email+"*" + "\n" +
+                          "Téléphone : " +"*"+telephone+"*" +"\n" +
+                          "Pays : " +"*"+pays+"*" + "\n" +
+                          "Ville : " +"*"+ville+"*" + "\n" +
+                          "Entreprise : " +"*"+entreprise+"*" + "\n" +
+                          "Nombre de véhicules : " +"*"+nbVehicules+"*" +"\n" +
+                          "Message : " +"*"+message;
 
       var numeroDestinataire = "+243810076009";
       var urlWhatsApp = "https://wa.me/" + numeroDestinataire +"?text=" + encodeURIComponent(texteWhatsApp);
