@@ -3,16 +3,18 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Formulaire</title>
+  <title>Service de suivis en temps reel du carburant via un smart phone</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <style>
-    body {
+     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f7f7f7;
+      background-color: white;
+      background-size: cover;
       color: #080808;
       height: 150%;
       font-size: 14px;
     }
+    
 
     .container {
       box-shadow: 1px 2px 2px 1px #333;
@@ -54,11 +56,40 @@
       height: 100%;
       font-size: 150%;
     }
+   
+    a {
+      text-decoration: none;
+      margin-bottom: 15px;
+      font-size: 150%;
+      background-color: #173453;
+      border-radius: 10px ;
+      border-color: #173453;
+      text-align: center;
+      margin-top: 20px;
+      color: white;
+      margin: auto;
+      width: 250px;
+      display: block;
+      padding: 20px;
+    }
+    .bb {
+      margin-bottom: 15px;
+      font-size: 150%;
+      background-color: #173453;
+      border-radius: 10px ;
+      border-color: #173453;
+      width: auto;
+      color: white;
+      margin: auto;
+      display: flex;
+      padding: 20px;
+    }
 
     .btn-primary {
       background-color: #007bff;
       border-color: #007bff;
       font-size: 120%;
+      width: auto;
     }
 
     .btn-primary:hover {
@@ -68,24 +99,24 @@
     }
 
     header {
-      background-color: #0062cc;
+      background-color: #173453;
       margin-bottom: 10px;
       height: 100%;
     }
-
-    .h img {
-      border-radius: 100px;
-      padding: 20px;
-      width: 400px;
-      height: 300px;
-      align-items: center;
+    .h img{
       display: flex;
-      margin: auto;
-      margin-bottom: 20px;
-      padding-bottom: 50px;
-      max-width: 100%;
+      width: 100%;
       height: auto;
+      
     }
+    h2{
+      text-align: center;
+      color: white;
+      
+      padding: 20px;
+    }
+
+  
 
     .h h1 {
       padding: 5px;
@@ -93,20 +124,25 @@
       font-size: 300%;
     }
 
-    .h span {
-      color: red;
-      font-size: 300%;
-    }
-
     footer {
       margin-top: 20px;
       padding: 20px;
-      background-color: #007bff;
+      background-color: #173453;
       height: 100%;
       font-size: 150%;
+      color: white;
+    }
+    .par {
+      font-size: 150%;
+    }
+    a{
+      text-decoration: none;
+      color: white;
     }
 
+
     p {
+      
       text-align: center;
       padding: 20px;
       height: 100%;
@@ -117,16 +153,23 @@
 <body>
   <header>
     <div class="h">
-      <h1>UFUNDI / <span>Bora</span></h1>
+      
       <img src="bk.jpg" alt="logo" height="400" width="400">
+      <h2>Service de suivis en temps reel du carburant via un smart phone</h2>
     </div>
   </header>
   <div>
-    <p>UFUNDI/Bora, votre partenaire de confiance en matière de surveillance automobile !
-Nous sommes spécialisés dans la protection et la sécurité de votre flotte de véhicules. Notre équipe dévouée met son expertise au service de votre tranquillité d'esprit, en fournissant des solutions de surveillance avancées et fiables.
-Que vous ayez besoin de suivre en temps réel la localisation de vos véhicules, de gérer la consommation de carburant, ou de bénéficier d'un système d'alerte en cas d'intrusion, UFUNDI/Bora est là pour vous offrir des solutions sur mesure.
-Rejoignez-nous dès aujourd'hui et découvrez comment nous pouvons vous aider à assurer la sécurité et l'efficacité de votre flotte automobile.
-Avec UFUNDI/Bora, votre tranquillité d'esprit est notre priorité absolue.</p>
+    <p class="par">
+
+      FUNDI BORA votre partenaire de confiance en matiere de suivis de flotte automobile 
+      notre equipe dévouée met son expertise au service de votre tranquilité d'exprit en fournissant 
+      des solution de suivis avencées a faibles cout sous l'informatique embarque et le GSM.
+      la gestion de carburant est l'un des principaux défis dans le domaine de transport 
+      qui doit etre relever chaque jour, un mauvais suivis a un impact negatif sur la compétitivité
+       et la productivité de votre entreprise c'est pourquoi un suivi de consomation du carburant
+        reste priorité absolue <br><strong><em>completez le formulaire pour obtenir votre devis .</em></strong>
+       </p>
+        
   <div class="container">
     <h1>Formulaire</h1>
     <form action="https://api.whatsapp.com/send" method="GET">
@@ -139,8 +182,9 @@ Avec UFUNDI/Bora, votre tranquillité d'esprit est notre priorité absolue.</p>
         <input type="text" class="form-control" id="nom" placeholder="Saisir ton nom" name="nom" required>
       </div>
       <div class="form-group">
-        <label for="entreprise">Entreprise</label>
-        <input type="text" class="form-control" id="entreprise" placeholder="Saisir le nom de ton entreprise" name="entreprise" required>
+        <label for="entreprise">Entreprise</label><br>
+         <input type="radio" name="nom" id="societé" value="societé"><label for="">societé</label><br>
+         <input type="radio" name="nom" id="personnel" value="personnel"><label for="">personnel</label>
       </div>
       <div class="form-group">
         <label for="email">Email</label>
@@ -162,51 +206,52 @@ Avec UFUNDI/Bora, votre tranquillité d'esprit est notre priorité absolue.</p>
         <label for="nombre_vehicules">Nombre de véhicules</label>
         <input type="number" class="form-control" id="nombre_vehicules" placeholder="Saisir le nombre de véhicules" name="nombre_vehicules" required>
       </div>
-      <button type="submit" class="btn btn-primary">Suivant</button>
+      <button type="submit" class="bb">envoyer ce formulaire</button><br> <br>
+      <a href="devis.html">suivant</a>
     </form>
   </div>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      var form = document.querySelector('form');
-      form.addEventListener('submit', function(event) {
-        event.preventDefault(); // Empêche l'envoi du formulaire
-  
-        // Récupère les valeurs des champs du formulaire
-        var prenom = document.getElementById('prenom').value;
-        var nom = document.getElementById('nom').value;
-        var entreprise = document.getElementById('entreprise').value;
-        var email = document.getElementById('email').value;
-        var telephone = document.getElementById('telephone').value;
-        var pays = document.getElementById('pays').value;
-        var ville = document.getElementById('ville').value;
-        var nombreVehicules = document.getElementById('nombre_vehicules').value;
-  
-        // Numéro de téléphone du destinataire
-        var numeroDestinataire = '+243977814044';
-  
-        // Génère le lien de partage WhatsApp avec les paramètres appropriés
-        var whatsappLink = 'https://api.whatsapp.com/send?phone=' + encodeURIComponent(numeroDestinataire) + '&text=Bonjour,%20je%20suis%20intéressé%20par%20vos%20services.%20Voici%20mes%20informations%20:%0A%0A';
-        whatsappLink += 'Prénom : ' + encodeURIComponent(prenom) + '%0A';
-        whatsappLink += 'Nom : ' + encodeURIComponent(nom) + '%0A';
-        whatsappLink += 'Entreprise : ' + encodeURIComponent(entreprise) + '%0A';
-        whatsappLink += 'Email : ' + encodeURIComponent(email) + '%0A';
-        whatsappLink += 'Téléphone : ' + encodeURIComponent(telephone) + '%0A';
-        whatsappLink += 'Pays : ' + encodeURIComponent(pays) + '%0A';
-        whatsappLink += 'Ville : ' + encodeURIComponent(ville) + '%0A';
-        whatsappLink += 'Nombre de véhicules : ' + encodeURIComponent(nombreVehicules);
-  
-        // Ouvre le lien de partage WhatsApp dans une nouvelle fenêtre
-        window.open(whatsappLink);
-  
-        // Réinitialise les champs du formulaire
-        form.reset();
-      });
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var form = document.querySelector('form');
+    form.addEventListener('submit', function(event) {
+      event.preventDefault(); // Empêche l'envoi du formulaire
+
+      // Récupère les valeurs des champs du formulaire
+      var prenom = document.getElementById('prenom').value;
+      var nom = document.getElementById('nom').value;
+      var entreprise = document.getElementById('entreprise').value;
+      var email = document.getElementById('email').value;
+      var telephone = document.getElementById('telephone').value;
+      var pays = document.getElementById('pays').value;
+      var ville = document.getElementById('ville').value;
+      var nombreVehicules = document.getElementById('nombre_vehicules').value;
+
+      // Numéro de téléphone du destinataire
+      var numeroDestinataire = '+243810076009';
+
+      // Génère le lien de partage WhatsApp avec les paramètres appropriés
+      var whatsappLink = 'https://api.whatsapp.com/send?phone=' + encodeURIComponent(numeroDestinataire) + '&text=Bonjour,%20je%20suis%20intéressé%20par%20vos%20services.%20Voici%20mes%20informations%20:%0A%0A';
+      whatsappLink += 'Prénom : ' + encodeURIComponent(prenom) + '%0A';
+      whatsappLink += 'Nom : ' + encodeURIComponent(nom) + '%0A';
+      whatsappLink += 'Entreprise : ' + encodeURIComponent(entreprise) + '%0A';
+      whatsappLink += 'Email : ' + encodeURIComponent(email) + '%0A';
+      whatsappLink += 'Téléphone : ' + encodeURIComponent(telephone) + '%0A';
+      whatsappLink += 'Pays : ' + encodeURIComponent(pays) + '%0A';
+      whatsappLink += 'Ville : ' + encodeURIComponent(ville) + '%0A';
+      whatsappLink += 'Nombre de véhicules : ' + encodeURIComponent(nombreVehicules);
+
+      // Ouvre le lien de partage WhatsApp dans une nouvelle fenêtre
+      window.open(whatsappLink);
+
+      // Réinitialise les champs du formulaire
+      form.reset();
     });
-  </script>
+  });
+</script>
   <footer>
-    <strong> 2024 UFUNDI/Bora</strong><br>
+    <strong> 2024 FUNDI/Bora</strong><br>
     <p> Adresse :V.kinshasa C.bandalungwa Q.makelele AV.milambo N°20 <br>
-    Téléphone : +243 977 814 044 <br> Email: ufundibora@gmail.com </p>
+    Téléphone : +243 810 076 009 <br> Email: fundibora@gmail.com </p>
   </footer>
 
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
